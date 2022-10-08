@@ -174,13 +174,14 @@
 
 str_1 = input().split()
 if len(str_1) == 1:
-    print(str_1, end='')
-for i in range(len(str_1)):
-    sum = 0
-    if i == 0:
-        sum += int(str_1[-1]) + int(str_1[1])
-    elif i == len(str_1):
-        sum += int(str_1[-2]) + int(str_1[0])
-    else:
-        sum += int(str_1[i - 1]) + int(str_1[i + 1])
-    print(sum, end=' ')
+    print(*str_1, end='')
+else:
+    for i in range(len(str_1)):
+        sum = 0
+        if i == 0:
+            sum += int(str_1[-1]) + int(str_1[1])
+        elif i == len(str_1) - 1:
+            sum += int(str_1[-2]) + int(str_1[0])
+        else:
+            sum += int(str_1[i - 1]) + int(str_1[i + 1])
+        print(sum, end=' ')
